@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImagetoCartoon | AI Cartoon Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #7d5fff; --dark-bg: #121212; --card-bg: #1e1e1e; }
+        body { font-family: 'Inter', sans-serif; background-color: #fff; color: #333; }
+        
+        /* Navbar */
+        .navbar { background: #fff; border-bottom: 1px solid #eee; }
+        .btn-primary-custom { background: var(--primary); color: white; border-radius: 8px; font-weight: 600; padding: 8px 20px; border: none; }
+
+        /* Converter Workspace (Dark) */
+        .converter-section { background: #fbfaff; padding: 60px 0; }
+        .workspace-box { background: var(--dark-bg); border-radius: 24px; padding: 40px; color: white; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        
+        .upload-area { border: 2px dashed #444; border-radius: 15px; padding: 50px; text-align: center; cursor: pointer; transition: 0.3s; }
+        .upload-area:hover { border-color: var(--primary); background: #1a1a1a; }
+
+        /* Style Selection */
+        .style-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .style-item { text-align: center; cursor: pointer; position: relative; }
+        .style-img { width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid transparent; transition: 0.2s; }
+        .style-item.active .style-img { border-color: var(--primary); }
+        .style-item.active::after { content: '✓'; position: absolute; top: -5px; right: 15%; background: var(--primary); color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; }
+        .style-name { font-size: 11px; color: #aaa; margin-top: 5px; display: block; }
+
+        /* How It Works */
+        .step-circle { width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 15px; }
+
+        /* FAQ (Dark Style as per Screenshot) */
+        .faq-section { background: var(--dark-bg); color: white; padding: 80px 0; }
+        .accordion-item { background: #1e1e1e; border: 1px solid #333; margin-bottom: 15px; border-radius: 12px !important; }
+        .accordion-button { background: #1e1e1e; color: white; font-weight: 600; }
+        .accordion-button:not(.collapsed) { background: #252525; color: var(--primary); box-shadow: none; }
+        .accordion-button::after { filter: invert(1); }
+
+        /* Footer */
+        footer { background: #f8f9fa; padding: 40px 0; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🎨 ImageToCartoon</a>
+            <div class="ms-auto d-flex align-items-center">
+                <a href="#" class="nav-link me-3 d-none d-md-block">Home</a>
+                <a href="#" class="nav-link me-3 d-none d-md-block">FAQ</a>
+                <button class="btn btn-primary-custom">Start Converting</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="converter-section">
+        <div class="container text-center mb-5">
+            <h1 class="display-4 fw-800">Transform Your Photos into <span style="color: var(--primary)">AI Art</span></h1>
+            <p class="text-muted">Convert images to 80+ unique styles instantly.</p>
+        </div>
+
+        <div class="container">
+            <div class="workspace-box">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="upload-area" onclick="document.getElementById('fin').click()">
+                            <input type="file" id="fin" hidden>
+                            <div class="fs-1">☁️</div>
+                            <h4 class="fw-bold mt-3">Upload Image</h4>
+                            <p class="text-secondary small">JPEG, PNG, WEBP allowed (Max 10MB)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <h6 class="fw-bold mb-3 text-uppercase small" style="letter-spacing: 1px;">Choose Styles</h6>
+                        <div class="style-grid mb-4">
+                            <div class="style-item active" onclick="selectStyle(this)">
+                                <img src="https://via.placeholder.com/100/7d5fff/fff?text=Pixel" class="style-img">
+                                <span class="style-name">Pixel Collage</span>
+                            </div>
+                            <div class="style-item" onclick="selectStyle(this)">
+                                <img src="https://via.placeholder.com/100/333/fff?text=Grit" class="style-img">
+                                <span class="style-name">Graffiti</span>
+                            </div>
+                            <div class="style-item" onclick="selectStyle(this)">
+                                <img src="https://via.placeholder.com/100/333/fff?text=Sketch" class="style-img">
+                                <span class="style-name">Sketchbook</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary-custom w-100 py-3">Convert to Cartoon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">How It Works</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="step-circle mx-auto">1</div>
+                    <h5>Upload</h5>
+                    <p class="small text-muted">Drag and drop any photo.</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-circle mx-auto">2</div>
+                    <h5>Pick Style</h5>
+                    <p class="small text-muted">Select from 80+ AI filters.</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-circle mx-auto">3</div>
+                    <h5>AI Magic</h5>
+                    <p class="small text-muted">Wait a few seconds for processing.</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="step-circle mx-auto">4</div>
+                    <h5>Download</h5>
+                    <p class="small text-muted">Save your high-res cartoon image.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Frequency Asked Questions</h2>
+            <div class="accordion mx-auto" id="faq" style="max-width: 800px;">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                            1. What is the Best Way to Cartoonize a Picture?
+                        </button>
+                    </h2>
+                    <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                        <div class="accordion-body text-secondary">
+                            The best way is using our AI-powered tool. It automatically converts photos with high precision in seconds.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                            2. Is it safe to cartoonize photos online?
+                        </button>
+                    </h2>
+                    <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body text-secondary">
+                            Absolutely. Your images are never uploaded to any server; the processing happens securely in your browser.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-2 fw-bold">ImageToCartoon</p>
+            <div class="mb-3">
+                <a href="#" class="text-decoration-none text-muted px-2">Privacy</a>
+                <a href="#" class="text-decoration-none text-muted px-2">Terms</a>
+                <a href="#" class="text-decoration-none text-muted px-2">Contact</a>
+            </div>
+            <p class="small text-secondary">© 2026 ImagetoCartoon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function selectStyle(el) {
+            document.querySelectorAll('.style-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>

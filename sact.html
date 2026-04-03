@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImagetoCartoon Replica</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Assets/Css/cartoon.css">
+  </head>
+  <body>
+  <!-- Navigation -->
+    <!-- <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://imagetocartoon.com/static/images/logo.png"
+            width="32"
+            alt=""
+          />
+          ImageToCartoon
+        </a>
+        <div class="collapse navbar-collapse justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Styles</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">How It Works</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="ms-lg-3 d-flex gap-2">
+    <a
+            href="#upload"
+            class="btn text-white fw-semibold px-4 py-2"
+            style="
+              border-radius: 10px;
+              background: linear-gradient(90deg, #7b61ff, #5b8cff);
+            "
+          >
+            Start Converting
+          </a>
+</div>
+      </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+      <div class="container">
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="/">
+          <img src="/static/logo.png" style="width: 35px; margin-right: 10px" />
+          ImageToCartoon
+        </a>
+
+        <!-- TOGGLER -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MENU -->
+        <div class="collapse navbar-collapse justify-content-center" id="nav">
+          <ul class="navbar-nav gap-3 fw-medium">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#styles" id="style">Styles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#how">How It Works</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="d-flex align-items-center gap-3">
+          <!-- LANGUAGE -->
+          <select class="form-select form-select-sm w-auto border-0 bg-light">
+            <option>🇺🇸 EN</option>
+            <option>🇮🇳 EN</option>
+          </select>
+
+          <!-- CONVERT BUTTON -->
+          <a
+            href="#upload"
+            class="btn text-white fw-semibold px-4 py-2"
+            style="
+              border-radius: 10px;
+              background: linear-gradient(90deg, #7b61ff, #5b8cff);
+            "
+          >
+            Start Converting
+          </a>
+        </div>
+      </div>
+    </nav>
+  <!-- image upload section -->
+    <div class="container text-center py-5">
+      <h1 class="hero-title">
+        Transform Your Photos into <br /><span class="text-gradient"
+          >Stunning Cartoons</span
+        >
+      </h1>
+      <p class="text-muted lead mt-3">
+        Convert any photo into beautiful cartoon art with our advanced AI.
+        Choose from <br />80+ unique styles and get professional results in
+        seconds.
+      </p>
+    </div>
+  <!-- Style Gallery -->
+    <div class="container mb-5">
+      <div class="workspace-container">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="comparison-slider">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800"
+                alt="Original"
+              />
+              <img
+                id="after"
+                class="img-after"
+                src="https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=800"
+                alt="Cartoon"
+              />
+              <img src="" accept="image/*" alt="" srcset="">
+              <input
+                type="range"
+                class="slider-handle"
+                id="slider"
+                min="0"
+                max="100"
+                value="50"
+              />
+              
+            </div>
+            <div class="mt-4">
+              <button class="btn btn-upload text-white">
+                <input  type="file"  name="image"  accept="image/*"  class="form-control mb-3 file-input"  required  />
+                <span>↑</span> Upload Image
+              </button>
+              <p class="text-center mt-2 small text-secondary">
+                Or drop image here, paste image or URL
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <h5 class="fw-bold mb-4">🪄 Choose Styles</h5>
+            <div class="row g-3">
+              <div class="col-4 style-item active" onclick="setActive(this)">
+                <div class="style-img-wrapper">
+                  <img
+                    src="Assets/Image/cartoon/Pixar.webp"
+                    alt=""
+                  />
+                </div>
+                <span class="style-label">Pixel Collage</span>
+              </div>
+              <div class="col-4 style-item" onclick="setActive(this)">
+                <div class="style-img-wrapper">
+                  <img
+                    src="Assets/Image/cartoon/Manga.webp"
+                    alt=""
+                  />
+                </div>
+                <span class="style-label">Graffiti</span>
+              </div>
+              <div class="col-4 style-item" onclick="setActive(this)">
+                <div class="style-img-wrapper">
+                  <img
+                    src="Assets/Image/cartoon/Popart.webp"
+                    alt=""
+                  />
+                </div>
+                <span class="style-label">Sticker</span>
+              </div>
+              <div class="col-4 style-item" onclick="setActive(this)">
+                <div class="style-img-wrapper">
+                  <img
+                    src="Assets/Image/cartoon/Claymation.webp"
+                    alt=""
+                  />
+                </div>
+                <span class="style-label">Sketchbook</span>
+              </div>
+            </div>
+
+            <hr class="my-4 border-secondary" />
+            <div class="d-flex justify-content-between mb-4">
+              <span>Quality Model: Vheer</span>
+              <span class="text-primary">Change</span>
+            </div>
+            <button class="btn btn-outline-light w-100 py-3 rounded-3 fw-bold">
+              Convert to Cartoon
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Cards -->
+    <section class="style-gallery py-5">
+      <div class="container text-center mb-5">
+        <span class="badge rounded-pill bg-light text-primary border px-3 py-2 mb-3">
+          <i class="bi bi-grid-fill"></i> 80+ Unique Styles
+        </span>
+        <h2 class="display-5 fw-bold mb-3">
+          Choose Your Perfect Cartoon Style
+        </h2>
+        <p class="text-muted mx-auto" style="max-width: 700px">
+          From classic Disney magic to modern anime aesthetics, explore our vast
+          collection of cartoon styles and find the perfect transformation for
+          your photos.
+        </p>
+      </div>
+
+      <div class="container">
+        <!-- JavaScript will inject all the cards into this empty div -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="card-container">
+          <!-- Cards appear here dynamically -->
+        </div>
+      </div>
+    </section>
+  <!-- Feature section -->
+    <section class="feature-section">
+      <div class="container">
+        <div class="row align-items-center mb-5 pb-5">
+          <div class="col-lg-12 pe-lg-5 mb-5 mb-lg-0">
+            <h2 class="feature-title text-center">
+              Transform Your Images with AI Magic
+            </h2>
+            <p class="feature-text">
+              Our advanced AI ensures fast image conversion with impressive
+              quality. Upload your photo and watch it transform into a polished
+              cartoon or illustration. You’ll get sharp, high-resolution images
+              perfect for avatars, prints, and online sharing—no editing
+              experience needed.
+            </p>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 pb-5">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="img-wrapper img-wrapper-reverse">
+              <div class="feature-img-container">
+                <img
+                  src="Assets/Image/cartoon/feature_image_1.webp"
+                  alt="Artistic Styles"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 ps-lg-5 order-1 order-lg-2 mb-5 mb-lg-0">
+            <h2 class="feature-title">Wide Range of Artistic Styles</h2>
+            <p class="feature-text">
+              Explore over a dozen AI cartoon styles including vibrant anime,
+              dreamy Ghibli, big-eye portraits, and modern retro. Each effect is
+              tailored to give your photo a unique look—whether you're going for
+              soft, aesthetic vibes or a dramatic fantasy feel. It’s never been
+              easier to create personalized art in seconds.
+            </p>
+            <ul class="feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> AI Powered</li>
+              <li><i class="bi bi-check-circle-fill"></i> High Quality</li>
+              <li><i class="bi bi-check-circle-fill"></i> Fast Processing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0">
+            <h2 class="feature-title">High-Quality, Instant Results</h2>
+            <p class="feature-text">
+              Our advanced AI ensures fast image conversion with impressive
+              quality. Upload your photo and watch it transform into a polished
+              cartoon or illustration. You’ll get sharp, high-resolution images
+              perfect for avatars, prints, and online sharing—no editing
+              experience needed.
+            </p>
+            <ul class="feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> AI Powered</li>
+              <li><i class="bi bi-check-circle-fill"></i> High Quality</li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Colorize old photos
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="img-wrapper">
+              <div class="feature-img-container">
+                <img
+                  src="Assets/Image/cartoon/feature_image_2.webp"
+                  alt="Instant Results"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- How it works -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5">How It Works</h2>
+        <div class="row text-center">
+          <div class="col-md-3">
+            <div class="step-circle mx-auto">1</div>
+            <h5>Upload</h5>
+            <p class="small text-muted">
+              Drag and drop or click to upload any photo. We support JPG, PNG,
+              and WebP formats up to 10MB..
+            </p>
+          </div>
+          <div class="col-md-3">
+            <div class="step-circle mx-auto">2</div>
+            <h5>Pick Style</h5>
+            <p class="small text-muted">
+              Browse through 80+ unique cartoon styles and select the one that
+              matches your vision.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <div class="step-circle mx-auto">3</div>
+            <h5>AI Magic</h5>
+            <p class="small text-muted">
+              Our advanced AI algorithms transform your photo into a stunning
+              cartoon artwork in seconds..
+            </p>
+          </div>
+          <div class="col-md-3">
+            <div class="step-circle mx-auto">4</div>
+            <h5>Download</h5>
+            <p class="small text-muted">
+              Get your high-quality cartoon image ready for social media,
+              printing, or any creative use..
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- FAQ -->
+    <!-- Replace your old FAQ section with this -->
+<section class="faq-section py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-2">Frequently Asked Questions</h2>
+    <p class="text-center fw-light text-muted mb-5">
+      Get Answers to Your Questions About imagetocartoon
+    </p>
+    
+    <!-- JavaScript will inject all the FAQs into this empty accordion div -->
+    <div class="accordion" id="faq-container">
+      <!-- FAQs appear here dynamically -->
+    </div>
+  </div>
+</section>
+  <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4 col-md-6">
+            <a href="#" class="footer-brand"> 🎨 ImageToCartoon </a>
+            <p class="footer-text">
+              Convert any photo into beautiful cartoon art with our advanced AI
+              in seconds. Perfect for avatars, gifts, and social media.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-pinterest"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 offset-lg-1">
+            <h4 class="footer-heading">Features</h4>
+            <ul class="footer-links">
+              <li><a href="#">Image to Cartoon</a></li>
+              <li><a href="#">Cartoon Avatar Maker</a></li>
+              <li><a href="#">3D Cartoonizer</a></li>
+              <li><a href="#">Pet Cartoonizer</a></li>
+              <li><a href="#">Landscape Anime</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h4 class="footer-heading">Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">How it Works</a></li>
+              <li><a href="#">Style Gallery</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h4 class="footer-heading">Support</h4>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright-text">
+            © 2026 ImageToCartoon. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+<!-- Auth Modal -->
+    <script>
+      // Comparison Slider
+      const slider = document.getElementById("slider");
+      const afterImg = document.getElementById("after");
+      slider.oninput = (e) => {
+        afterImg.style.width = e.target.value + "%";
+      };
+
+      // Style Selection
+      function setActive(el) {
+        document
+          .querySelectorAll(".style-item")
+          .forEach((i) => i.classList.remove("active"));
+        el.classList.add("active");
+      }
+    </script>
+    <script src="Assets/Js/cartoon.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

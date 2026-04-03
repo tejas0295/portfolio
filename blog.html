@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Assets/Css/contact.css" />
+    <link rel="stylesheet" href="Assets/Css/blog.css" />
+  </head>
+
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#"
+          ><img src="Assets/Image/header/logo.png" height="24" alt="Logo"
+        /></a>
+
+        <!-- Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+
+          <!-- Icons -->
+          <div class="nav-icons gap-4 d-none d-lg-flex align-items-center">
+            <!-- Person -->
+            <svg width="18" height="18" viewBox="0 0 16 16">
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+              />
+            </svg>
+
+            <!-- Search -->
+            <svg width="18" height="18" viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+              />
+            </svg>
+
+            <!-- Heart -->
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+              />
+            </svg>
+
+            <!-- Cart -->
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <img src="Assets/Image/header/logo.png" alt="" />
+            <h1 class="display-4 fw-bold">Blog</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section py-5" data-animate>
+      <div class="container py-5">
+        <div class="row">
+          <!-- ===== LEFT BLOG AREA ===== -->
+          <div class="col-lg-8">
+            <!-- Blog Item -->
+            <div class="blog-card">
+              <img
+                src="Assets/Image/blog/blog1 (1).png"
+                alt="" 
+              />
+              <div class="blog-meta">Admin · 14 Oct 2022 · Wood</div>
+              <h3>Going all-in with millennial design</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <a href="#" class="read-more">Read more</a>
+            </div>
+
+            <div class="blog-card">
+              <img
+                src="Assets/Image/blog/blog1 (2).png"
+                alt="" height="150"
+              />
+              <div class="blog-meta">Admin · 14 Oct 2022 · Handmade</div>
+              <h3>Exploring new ways of decorating</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <a href="#" class="read-more">Read more</a>
+            </div>
+
+            <div class="blog-card">
+              <img
+                src="Assets/Image/blog/blog1 (3).png"
+                alt="" height="150"
+              />
+              <div class="blog-meta">Admin · 14 Oct 2022 · Wood</div>
+              <h3>Handmade pieces that took time to make</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <a href="#" class="read-more">Read more</a>
+            </div>
+
+            <!-- Pagination -->
+            <nav>
+              <ul class="pagination justify-content-center">
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- ===== SIDEBAR ===== -->
+          <div class="col-lg-4">
+            <!-- Search -->
+            <div class="sidebar-box">
+              <input type="text" class="form-control" placeholder="Search..." />
+            </div>
+
+            <!-- Categories -->
+            <div class="sidebar-box">
+              <h4 class="sidebar-title">Categories</h4>
+              <ul class="list-unstyled category-list">
+                <li><span>Crafts</span><span>2</span></li>
+                <li><span>Design</span><span>8</span></li>
+                <li><span>Handmade</span><span>7</span></li>
+                <li><span>Interior</span><span>1</span></li>
+                <li><span>Wood</span><span>6</span></li>
+              </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="sidebar-box">
+              <h4 class="sidebar-title">Recent Posts</h4>
+              <ul class="list-unstyled recent-post">
+                <li>
+                  <img
+                    src="Assets/Image/blog/blog1 (3).png"
+                    alt="" height="50vh"
+                  />
+                  <div>
+                    <h6>Going all-in with millennial design</h6>
+                    <small>03 Aug 2022</small>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="Assets/Image/blog/blog1 (1).png"
+                    alt=""
+                  />
+                  <div>
+                    <h6>Exploring new ways of decorating</h6>
+                    <small>03 Aug 2022</small>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-strip" data-animate="">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="feature-item" data-animate>
+              <i class="bi bi-trophy feature-icon"></i>
+              <div>
+                <p class="feature-title">High Quality</p>
+                <p class="feature-text">crafted from top materials</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="feature-item">
+              <i class="bi bi-patch-check feature-icon"></i>
+              <div>
+                <p class="feature-title">Warranty Protection</p>
+                <p class="feature-text">Over 2 years</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="feature-item">
+              <i class="bi bi-box-seam feature-icon"></i>
+              <div>
+                <p class="feature-title">Free Shipping</p>
+                <p class="feature-text">Order over 150 $</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="feature-item">
+              <i class="bi bi-headset feature-icon"></i>
+              <div>
+                <p class="feature-title">24 / 7 Support</p>
+                <p class="feature-text">Dedicated support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" data-animate>
+      <div class="container">
+        <div class="row">
+          <!-- Brand -->
+          <div class="col-lg-4 mb-4">
+            <div class="footer-logo">Funiro.</div>
+            <p class="footer-address">
+              400 University Drive Suite 200 Coral Gables,<br />
+              FL 33134 USA
+            </p>
+          </div>
+
+          <!-- Links -->
+          <div class="col-lg-2 col-md-4 mb-4">
+            <div class="footer-title">Links</div>
+            <div class="footer-links">
+              <a href="#">Home</a>
+              <a href="#">Shop</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+
+          <!-- Help -->
+          <div class="col-lg-2 col-md-4 mb-4">
+            <div class="footer-title">Help</div>
+            <div class="footer-links">
+              <a href="#">Payment Options</a>
+              <a href="#">Returns</a>
+              <a href="#">Privacy Policies</a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-4 mb-4">
+            <div class="footer-title">Newsletter</div>
+            <div class="newsletter d-flex align-items-center">
+              <input
+                type="email"
+                placeholder="Enter Your Email Address"
+                required
+              />
+              <button type="button">SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom"><b>2023 funiro. All rights reserved</b></div>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let valid = true;
+
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+
+          document
+            .querySelectorAll(".error")
+            .forEach((el) => (el.textContent = ""));
+
+          if (name.length < 3) {
+            document.getElementById("nameError").textContent =
+              "Name must be at least 3 characters";
+            valid = false;
+          }
+
+          if (!email.includes("@")) {
+            document.getElementById("emailError").textContent =
+              "Enter a valid email";
+            valid = false;
+          }
+
+          if (message.length < 10) {
+            document.getElementById("messageError").textContent =
+              "Message must be at least 10 characters";
+            valid = false;
+          }
+
+          if (!valid) return;
+
+          fetch("contact.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message }),
+          })
+            .then((res) => res.text())
+            .then((data) => {
+              document.getElementById("successMsg").textContent = data;
+              document.getElementById("contactForm").reset();
+            });
+        });
+    </script>
+    <script>
+      const animatedItems = document.querySelectorAll("[data-animate]");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      animatedItems.forEach((item) => observer.observe(item));
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
